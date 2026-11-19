@@ -1,1 +1,198 @@
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TpMiTeam — Garry's Mod</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(135deg,#100b28,#21104b,#102e53);
+  min-height: 100vh;
+}
+header {
+  padding: 25px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #100b28cc;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: #b77aff;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.hero {
+  text-align: center;
+  padding: 110px 20px 90px;
+}
+.hero h1 {
+  font-size: clamp(42px,8vw,76px);
+  margin: 0;
+  background: linear-gradient(90deg,#ff66cf,#8d75ff,#45dcff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.hero p {
+  color: #d0c7e9;
+  font-size: 19px;
+}
+.buttons {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 17px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .2s;
+}
+button:hover { transform: translateY(-4px); }
+.play {
+  background: linear-gradient(90deg,#ff55c8,#895cff);
+  color: white;
+}
+.copy {
+  background: #ffffff18;
+  color: white;
+  border: 1px solid #ffffff40;
+}
+section {
+  padding: 45px 20px;
+  text-align: center;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 25px;
+}
+.card {
+  background: #ffffff12;
+  border: 1px solid #ffffff20;
+  border-radius: 18px;
+  padding: 28px;
+  width: 260px;
+}
+.card h3 { color: #b98cff; }
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #aaa0c8;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">TpMiTeam</div>
+  <nav>
+    <a href="#home">Главная</a>
+    <a href="#server">Сервер</a>
+    <a href="#about">О нас</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <h1>TpMiTeam</h1>
+  <p>Добро пожаловать в наше игровое сообщество!</p>
+  <div class="buttons">
+    <button class="play" onclick="connect()">
+      🎮 ИГРАТЬ
+    </button>
+    <button class="copy" onclick="copyIP()">
+      📋 СКОПИРОВАТЬ IP
+    </button>
+  </div>
+</section>
+
+<section id="server">
+  <h2>Наш игровой сервер</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🎮 Garry's Mod</h3>
+      <p>Присоединяйся к TpMiTeam!</p>
+      <p id="serverIP">IP: УКАЖИ_IP:27015</p>
+      <button class="play" onclick="connect()">
+        Подключиться
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>Почему TpMiTeam?</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🔥 Атмосфера</h3>
+      <p>Играй и общайся с другими игроками.</p>
+    </div>
+    <div class="card">
+      <h3>🎯 Сообщество</h3>
+      <p>Стань частью нашей команды.</p>
+    </div>
+    <div class="card">
+      <h3>🚀 Развитие</h3>
+      <p>Вместе создаём игровой проект.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  © 2026 TpMiTeam. Все права защищены.
+</footer>
+
+<script>
+// ВСТАВЬ СЮДА IP СВОЕГО СЕРВЕРА
+const SERVER_IP = "УКАЖИ_IP:27015";
+
+function connect() {
+  if (SERVER_IP.includes("УКАЖИ_IP")) {
+    alert("Сначала укажи IP сервера!");
+    return;
+  }
+  window.location.href = "steam://connect/" + SERVER_IP;
+}
+
+
+const SERVER_IP = "46.174.50.145:27020";
+
+function connect() {
+  window.location.href = "steam://connect/" + SERVER_IP;
+}
+
+function copyIP() {
+  navigator.clipboard.writeText(SERVER_IP)
+    .then(() => alert("IP сервера TpMiTeam скопирован!"))
+    .catch(() => alert("Не удалось скопировать IP"));
+}
+
+}
+</script>
+
+</body>
+</html>
+
+const SERVER_IP = "46.174.50.145:27020";
+
+function connect() {
+  window.location.href = "steam://connect/" + SERVER_IP;
+}
